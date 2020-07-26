@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Will Alwin Chatbot -->
+<aiml>
+    <!--basic intro categories-->
+    <category>
+        <pattern>HI ^</pattern>
+        <template>Hello there, how can I help you today?</template>
+    </category> 
+    
+    <category>
+        <pattern>HELLO ^</pattern>
+        <template>Hello there, how can I help you today?</template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>My name is <set name = "agent-name">Will</set>, what is your name?</template>
+    </category>
+    
+    <category>
+        <pattern>_ NAME IS *</pattern>
+        <template>
+            <random>
+                <li>Hello <set name = "user-name"><star index = "2"/></set>, nice to meet you. How can I help you today?</li>
+                <li>Hi <set name = "user-name"><star index = "2"/></set>! How can I help you.</li>
+            </random>
+        </template>
+    </category>
+
+<category><pattern>_</pattern><template><srai>_ NAME IS *</srai></template></category>
+
+    
+    <!-- handles user looking for help with job patterns-->
+    <category>
+        <pattern>^ HELP * JOB ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <category>
+        <pattern>^ HELP * CAREER ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <category>
+        <pattern>^ FIGURE OUT * CAREER ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <category>
+        <pattern>^ FIGURE OUT * JOB ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <category>
+        <pattern>^ LOOKING * JOB ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <category>
+        <pattern>^ LOOKING * CAREER ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <category>
+        <pattern>^ DECIDE * CAREER ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <category>
+        <pattern>^ DECIDE * JOB ^</pattern>
+        <template><think><set name = "topic">Job</set></think>Great, I will try and help you decide which jobs might be a good fit for you. I have compliled a list of some of the top computer science jobs for 2019, would like to hear about them?</template>
+    </category>
+    
+    <!-- job topic with clickable boxes and pattern matching for typical responses-->
+    <topic name = "Job">
+        <category>
+            <pattern>YES ^</pattern>
+            <template>Okay, here is a list of potential jobs, pick whichever you would like to learn more about.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>SURE ^</pattern>
+            <template>Okay, here is a list of potential jobs, pick whichever you would like to learn more about.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>OKAY ^</pattern>
+            <template>Okay, here is a list of potential jobs, pick whichever you would like to learn more about.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>NO ^</pattern>
+            <template>Okay, what career would you like information on then?</template>
+        </category>
+   
+    </topic>
+
+    <!--job descriptions with clickable "Learn more" links for each job type-->
+    <category>
+        <pattern>^ FULL STACK ^</pattern>
+        <template><think><set name = "topic">fullstack</set></think>A full stack developer must be familiar with both front and back-end web development.
+        You will be involved in the creation of an application from start to finish. If you want to be constantly learning new technologies and languages this could be a great career for you.
+        Openings in this field are expected to grow by 13% over the next few years<!--(Top 6 Jobs with a Computer Science Degree May 3, 2019)-->.
+        Does this sound like something you might be interested in?
+        </template>
+    </category>
+    <topic name = "fullstack">
+        <category>
+            <pattern>^ YES ^</pattern>
+            <template>Great! Here is an article that will give you some insight into what it takes to be a full stack developer.
+                <button>
+                    <text>Learn More</text>
+                    <url>https://hackernoon.com/6-essential-tips-on-how-to-become-a-full-stack-developer-1d10965aaead</url>
+                </button>
+            </template>
+        </category>
+        <category>
+            <pattern>^ NO ^</pattern>
+            <template>Okay, how about you take a look at one of the other career options available to you.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        <!--pattern matching for salary-->
+        <category>
+            <pattern>WHAT ^ PAY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Full Stack Developer is $80,312 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ PAID</pattern>
+            <template>According to glassdoor.com the national average salary for a Full Stack Developer is $80,312 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ MAKE</pattern>
+            <template>According to glassdoor.com the national average salary for a Full Stack Developer is $80,312 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>WHAT ^ SALARY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Full Stack Developer is $80,312 in United States. Still interested?</template>
+        </category>
+    </topic>
+    
+    <category>
+        <pattern>^ MOBILE ^</pattern>
+        <template><think><set name = "topic">mobile</set></think>Smart phones are ubiquitous in todays world and the need for skilled mobile app developers will continue to grow for the foreseeable future.
+        You will be programming on mobile operating systems and should have experience using languages like Java, C++, C, and Python.
+        This job will allow you to use your creative side to help design and implement the app that could be the next big thing<!--(Top 6 Jobs with a Computer Science Degree May 3, 2019)-->.
+        Does this sound like something you might be interested in?
+        </template>
+    </category>
+    <topic name = "mobile">
+        <category>
+            <pattern>^ YES ^</pattern>
+            <template>Great! Here is an article that will give you some insight into the life of a mobile application developer.
+                <button>
+                    <text>Learn More</text>
+                    <url>https://www.mobileforming.com/blog/mobile-app-development-good-career</url>
+                </button>
+            </template>
+        </category>
+        <category>
+            <pattern>^ NO ^</pattern>
+            <template>Okay, how about you take a look at one of the other career options available to you.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        <!--pattern matching for salary-->
+        <category>
+            <pattern>WHAT ^ PAY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Mobile Application Developer is $92,721 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ PAID</pattern>
+            <template>According to glassdoor.com the national average salary for a Mobile Application Developer is $92,721 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ MAKE</pattern>
+            <template>According to glassdoor.com the national average salary for a Mobile Application Developer is $92,721 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>WHAT ^ SALARY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Mobile Application Developer is $92,721 in United States. Still interested?</template>
+        </category>
+    </topic>
+    
+    <category>
+        <pattern>^ SOFTWARE ^</pattern>
+        <template><think><set name = "topic">software</set></think>A software engineer is responsible for ensuring that applications run smoothly and accurately.
+        You will be responsible to writing, testing, debugging, and documenting code for multiple platforms.
+        Programming languages used can vary widely but some popular ones are C++, Python, and Java. The actual requirement of this position will vary, but strong analytical skills are a must
+        <!--(Top 6 Jobs with a Computer Science Degree May 3, 2019)-->. Does this sound like something you might be interested in?
+        </template>
+    </category>
+    <topic name = "software">
+        <category>
+            <pattern>^ YES ^</pattern>
+            <template>Great! Here is an article for you to read that will give you some insight into the life of a software engineer.
+                <button>
+                    <text>Learn More</text>
+                    <url>https://www.careerexplorer.com/careers/software-engineer/</url>
+                </button>
+            </template>
+        </category>
+        <category>
+            <pattern>^ NO ^</pattern>
+            <template>Okay, how about you take a look at one of the other career options available to you.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        <!--pattern matching for salary-->
+        <category>
+            <pattern>WHAT ^ PAY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Software Engineer is $103,035 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ PAID</pattern>
+            <template>According to glassdoor.com the national average salary for a Software Engineer is $103,035 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ MAKE</pattern>
+            <template>According to glassdoor.com the national average salary for a Software Engineer is $103,035 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>WHAT ^ SALARY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Software Engineer is $103,035 in United States. Still interested?</template>
+        </category>
+    </topic>
+    
+    <category>
+        <pattern>^ SYSTEMS ^</pattern>
+        <template><think><set name = "topic">systems</set></think>As a systems architect you will develop and maintain computer systems and networks.
+        You will design a technology solution from the ground up to meet the needs of your organization. You will work closely with software engineers,
+        so a deep understanding of engineering techniques and capabilities is required<!--(Top 6 Jobs with a Computer Science Degree May 3, 2019)-->.
+        Does this sound like something you might be interested in?
+        </template>
+    </category>
+    <topic name = "systems">
+        <category>
+            <pattern>^ YES ^</pattern>
+            <template>Great! Here is an article for you to read that will give you some insight into the life of a systems architect.
+                <button>
+                    <text>Learn More</text>
+                    <url>https://www.careerexplorer.com/careers/systems-architect/</url>
+                </button>
+            </template>
+        </category>
+        <category>
+            <pattern>^ NO ^</pattern>
+            <template>Okay, how about you take a look at one of the other career options available to you.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        <!--pattern matching for salary-->
+        <category>
+            <pattern>WHAT ^ PAY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Systems Architect is $105,161 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ PAID</pattern>
+            <template>According to glassdoor.com the national average salary for a Systems Architect is $105,161 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ MAKE</pattern>
+            <template>According to glassdoor.com the national average salary for a Systems Architect is $105,161 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>WHAT ^ SALARY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Systems Architect is $105,161 in United States. Still interested?</template>
+        </category>
+    </topic>
+        
+    <category>
+        <pattern>^ MACHINE LEARNING ^</pattern>
+        <template><think><set name = "topic">machine</set></think>Want to be on the cutting edge of computer science? Machine learning may be the career for you.
+        As a machine learning engineer you will build and deploy ML systems that learn and improve independently.
+        Machine learning engineers are in high demand with the number of jobs increasing every year. You will need to have a good grasp on data structures and algorithms,
+        and learn how to build neural networks. Please, just don’t be the one who invents Skynet<!--(Top 6 Jobs with a Computer Science Degree May 3, 2019)-->.
+        Does this sound like something you might be interested in?
+        </template>
+    </category>
+    <topic name = "machine">
+        <category>
+            <pattern>^ YES ^</pattern>
+            <template>Great! Here is an article for you to read that will give you some insight into the life of a machine learning engineer.
+                <button>
+                    <text>Learn More</text>
+                    <url>https://medium.com/@tomaszdudek/but-what-is-this-machine-learning-engineer-actually-doing-18464d5c699</url>
+                </button>
+            </template>
+        </category>
+        <category>
+            <pattern>^ NO ^</pattern>
+            <template>Okay, how about you take a look at one of the other career options available to you.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        <!--pattern matching for salary-->
+        <category>
+            <pattern>WHAT ^ PAY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Machine Learning Engineer is $121,199 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ PAID</pattern>
+            <template>According to glassdoor.com the national average salary for a Machine Learning Engineer is $121,199 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ MAKE</pattern>
+            <template>According to glassdoor.com the national average salary for a Machine Learning Engineer is $121,199 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>WHAT ^ SALARY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Machine Learning Engineer is $121,199 in United States. Still interested?</template>
+        </category>
+    </topic>  
+    
+    <category>
+        <pattern>^ DATA ^</pattern>
+        <template><think><set name = "topic">data</set></think>As a data engineer your job will be to prepare “Big Data” to be analyzed by data scientists.
+        You will design, build, integrate and manage data from various sources, then, write complex queries to make it is easily accessible and useful using database languages like SQL
+        <!--(Top 6 Jobs with a Computer Science Degree May 3, 2019)-->. Does this sound like something you might be interested in?
+        </template>
+    </category>
+    <topic name = "data">
+        <category>
+            <pattern>^ YES ^</pattern>
+            <template>Great! Here is an article for you to read that will give you some insight into the life of a data engineer.
+                <button>
+                    <text>Learn More</text>
+                    <url>https://towardsdatascience.com/who-is-a-data-engineer-how-to-become-a-data-engineer-1167ddc12811</url>
+                </button>
+            </template>
+        </category>
+        <category>
+            <pattern>^ NO ^</pattern>
+            <template>Okay, how about you take a look at one of the other career options available to you.
+                <button>
+                    <text>Full Stack Developer</text>
+                    <postback><think><pattern>FULL STACK DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Mobile Application Developer</text>
+                    <postback><think><pattern>MOBILE APPLICATION DEVELOPER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Software Engineer</text>
+                    <postback><think><pattern>SOFTWARE ENGINEER</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Systems Architect</text>
+                    <postback><think><pattern>SYSTEMS ARCHITECT</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Machine Learning Engineer</text>
+                    <postback><think><pattern>MACHINE LEARNING</pattern></think></postback>
+                </button>
+                <button>
+                    <text>Data Engineer</text>
+                    <postback><think><pattern>DATA ENGINEER</pattern></think></postback>
+                </button>
+            </template>
+        </category>
+        <!--pattern matching for salary-->
+        <category>
+            <pattern>WHAT ^ PAY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Data Engineer is $116,591 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ PAID</pattern>
+            <template>According to glassdoor.com the national average salary for a Data Engineer is $116,591 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>HOW MUCH ^ MAKE</pattern>
+            <template>According to glassdoor.com the national average salary for a Data Engineer is $116,591 in United States. Still interested?</template>
+        </category>
+        <category>
+            <pattern>WHAT ^ SALARY ^</pattern>
+            <template>According to glassdoor.com the national average salary for a Data Engineer is $116,591 in United States. Still interested?</template>
+        </category>
+    </topic> 
+    
+    <!--random pattern catch with ability to search online using input-->
+    <category>
+        <pattern>*</pattern>
+        <template>I have no answer for that, but I can look it up for you.
+            <button>
+                <text>Click here for more info</text>
+                <url>http://letmegooglethat.com/?q=<star/></url>
+            </button>
+        </template>
+    </category>
+  
+
+</aiml>
+<!-- References
+    Log In. (n.d.). Retrieved from https://www.glassdoor.com/member/home/index.htm.
+    
+    Top 6 Jobs with a Computer Science Degree May 3. (2019, September 20). Top 6 Jobs with a Computer Science Degree.
+    Retrieved from https://blog.coursera.org/top-6-jobs-computer-science-degree/.
+-->
